@@ -12,11 +12,12 @@
     <h1>{{ $text->header }}</h1>
 
     <div class='text cf'>
-
+        <label for='header'>Header</label>
         <h2>{{ $text->header }}</h2>
+        <label for='Contents'>Contents</label>
         <p>{{ $text->contents }}</p>
 
-        @if($flag)
+        @if($sameUser)
         <ul class='textActions'>
             <li><a href='/texts/{{ $text->id }}/edit'><i class="fas fa-pencil-alt"></i> Edit</a>
             <li><a href='/texts/{{ $text->id }}/delete'><i class="fas fa-trash-alt"></i> Delete</a>

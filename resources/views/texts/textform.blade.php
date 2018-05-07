@@ -5,7 +5,7 @@
 @include('modules.error-field', ['field' => 'header'])
 
 <label for='content'>* Contents</label>
-<input type='text' name='contents' id='contents' value='{{ old('contents', $text->contents) }}'>
+<textarea id="contents" name = "contents" rows="10" >{{ old('contents', $text->contents) }}</textarea>
 @include('modules.error-field', ['field' => 'contents'])
 
 <label>Tags</label>

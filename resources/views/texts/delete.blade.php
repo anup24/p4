@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
-@push('head')
-    <link href='/css/wikitext.css' rel='stylesheet'>
-@endpush
-
 @section('title')
     Confirm deletion: {{ $text->header }}
 @endsection
+
+@push('head')
+    <link href='/css/wikitext.css' rel='stylesheet'>
+@endpush
 
 @section('content')
     <h1>Confirm deletion</h1>

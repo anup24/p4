@@ -27,7 +27,7 @@ class WikiTextsController extends Controller
 
     public function display(Request $request, $id)
     {
-        $flag = false;
+        $sameUser = false;
         $text= Text::find($id);
 
         $user = $request->user();
@@ -36,7 +36,7 @@ class WikiTextsController extends Controller
             $curr_user_id = $user->id;
 
             if($text_user_id == $curr_user_id){
-                $flag = true;
+                $sameUser = true;
             }
         }
         if (!$text) {
@@ -46,7 +46,7 @@ class WikiTextsController extends Controller
         }
         return view('texts.display')->with([
             'text' => $text,
-            'flag' => $flag,
+            'sameUser' => $sameUser,
         ]);
     }
 
@@ -164,7 +164,7 @@ class WikiTextsController extends Controller
     {
         $searchResults = [];
         # Store the searchTerm in a variable for easy access
-        $searchTerm = $request->input('searchTerm', null);
+        $searchTerm = $request->input('searchTerm', 'My Text 1');
         # Only try and search *if* there's a searchTerm
         if ($searchTerm) {
             # Nothing fancy here; just a built in PHP method

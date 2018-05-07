@@ -5,8 +5,8 @@
 }
 
 html {
-    font-size: 62.5%; /* http://snook.ca/archives/html_and_css/font-size-with-rem */
-    color: #111;
+    font-size: 62.5%;
+    color: #18bc9c;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     /* sticky footer */
@@ -48,8 +48,7 @@ header {
 }
 
 #logo {
-    /* Actual width is 632; displaying at half-size for retina screens */
-    width: 550px;
+    width: 450px;
     height: 90px;
 }
 
@@ -154,7 +153,7 @@ input[type='checkbox'] + label {
 
 .error {
     list-style-type: none;
-    color: #a94442; /* reddish */
+    color: #a94442;
     text-align: left;
     margin: 0;
     padding: 0;
@@ -277,17 +276,6 @@ a.text {
     border: 1px solid #eee;
 }
 
-a.textarea {
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    width: 1000%;
-    margin-bottom: 20px;
-    text-align: left;
-    border: 1px solid #eee;
-}
-
 a.text:hover {
     border: 1px solid black;
 }
@@ -307,3 +295,8 @@ a.text .cover {
     border: 1px solid black;
     margin-right: 10px;
 }
+
+
+
+
+
