@@ -1,43 +1,37 @@
 <?php
+Route::get('/', 'WikiTextsController@index');
+Route::get('/about', 'PageController@about');
+Route::get('/contact', 'PageController@contact');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+# CREATE
+# Show the form to add a new text
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('/texts/create', 'WikiTextsController@create');
+
+    # READ
+    Route::post('/texts', 'WikiTextsController@store');
+
+    # UPDATE
+    # Show the form to edit a specific text
+    Route::get('/texts/{id}/edit', 'WikiTextsController@edit');
+
+    # Process the form to edit a specific text
+    Route::put('/texts/{id}', 'WikiTextsController@update');
+
+    # DELETE
+    Route::get('/texts/{id}/delete', 'WikiTextsController@delete');
+
 });
+Route::get('/texts', 'WikiTextsController@index');
 
-Route::get('/debug', function () {
+# Show an individual text
+Route::get('/texts/{id}', 'WikiTextsController@display');
 
-    $debug = [
-        'Environment' => App::environment(),
-        'Database defaultStringLength' => Illuminate\Database\Schema\Builder::$defaultStringLength,
-    ];
+# Process the deletion of a text
+Route::delete('/texts/{id}', 'WikiTextsController@destroy');
 
-    /*
-    The following commented out line will print your MySQL credentials.
-    Uncomment this line only if you're facing difficulties connecting to the
-    database and you need to confirm your credentials. When you're done
-    debugging, comment it back out so you don't accidentally leave it
-    running on your production server, making your credentials public.
-    */
-    #$debug['MySQL connection config'] = config('database.connections.mysql');
+# Search
+Route::get('/texts/search', 'WikiTextsController@search');
 
-    try {
-        $databases = DB::select('SHOW DATABASES;');
-        $debug['Database connection test'] = 'PASSED';
-        $debug['Databases'] = array_column($databases, 'Database');
-    } catch (Exception $e) {
-        $debug['Database connection test'] = 'FAILED: '.$e->getMessage();
-    }
-
-    dump($debug);
-});
+Auth::routes();

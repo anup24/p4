@@ -1,7 +1,5 @@
 <?php
-
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -9,21 +7,42 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /*
+    * Define the one to many relationship with authors
+    */
+    public function texts()
+    {
+        # Define a one-to-many relationship.
+        return $this->hasMany('App\Text');
+    }
+    /*
+     * Return an array of authors where key = author id and value = authors name
+     */
+    public static function getForDropdown()
+    {
+        $users = self::orderBy('last_name')->get();
+        $usersForDropdown = [];
+        foreach ($users as $user) {
+            $usersForDropdown[$user->id] = $user->getFullName($reverse = true);
+        }
+        return $usersForDropdown;
+    }
+    /*
+     * Return authors full name
+     */
+    public function getFullName($reverse = false) {
+        if($reverse) {
+            return $this->last_name . ', ' . $this->first_name;
+        } else {
+            return $this->first_name.' '.$this->last_name;
+        }
+    }
 }

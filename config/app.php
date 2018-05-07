@@ -2,6 +2,24 @@
 
 return [
 
+    'supportEmail' => 'anup.shetye@gmail.com',
+    # Guest navigation links
+    'nav' => [
+        '/texts' => 'WikiTexts',
+        '/register' => 'Register',
+        '/login' => 'Login',
+        '/about' => 'About',
+        '/contact' => 'Contact',
+    ],
+
+    # Logged-in user navigation links
+    'nav1' => [
+        '/texts' => 'WikiTexts',
+        '/texts/create' => 'Add New WikiText',
+        '/texts/search' => 'Search WikiText',
+        '/about' => 'About',
+        '/contact' => 'Contact',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +31,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'WikiText'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +70,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://p4.dwa15.site'),
 
     /*
     |--------------------------------------------------------------------------
@@ -159,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
     ],
 
