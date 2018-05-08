@@ -1,30 +1,13 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-    color: #18bc9c;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-    /* sticky footer */
-    position: relative;
-    min-height: 100%;
-}
-
 body {
     /* Default font-size */
     font-size: 16px;
     font-size: 1.6rem;
-
-    /* sticky footer - match footer height */
+    font-family: 'Tangerine', serif;
     margin-bottom: 60px;
 }
 
 section#main {
-    max-width: 850px;
+    max-width: 650px;
     width: 100%;
     margin: auto;
    /* padding-bottom: 20px; */
@@ -47,29 +30,32 @@ header {
     margin-top: 20px;
 }
 
+contents {
+    text-align: center;
+    margin-top: 20px;
+}
+
 #logo {
-    width: 450px;
+    width: 550px;
     height: 90px;
 }
 
 footer {
     text-align: center;
-    background-color: #eee;
-
-    /* sticky footer */
+    background-color: #bde6ed;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
+    height: 45px;
+    line-height: 45px;
 }
 
 /*----------------------------------------------------
 Nav bar
 -----------------------------------------------------*/
 nav {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #bde6ed;
+    border-bottom: 1px solid #bde6ed;
     padding: 5px;
     margin-top: 10px;
 }
@@ -105,14 +91,17 @@ a.active:link, a.active:visited, a.active:active, a.active:hover {
 h1 {
     text-align: center;
     font-size: 3.0rem;
+    color: #a94442;
 }
 
 h2 {
     font-size: 2.5rem;
+    color: #a94442;
 }
 
 h3 {
     font-size: 2.0rem;
+    color: #a94442;
 }
 
 /*----------------------------------------------------
@@ -132,10 +121,10 @@ label, legend {
 
 input[type=text], input[type=email], input[type=password], textarea, select {
     display: block;
-    width: 100%;
+    width: 50%;
     font-size: 1.5rem;
     padding: 3px;
-    font-family: Consolas, Courier, monospace;
+    border: 1px solid black;
 }
 
 input[type='checkbox'], input[type='radio'] {
@@ -171,7 +160,7 @@ ul.alert {
 }
 
 .success {
-    color: #3c763d; /* greenish */
+    color: #3c763d;
 }
 
 .details {
@@ -223,16 +212,32 @@ Misc
     margin: 4px 0 4px 0;
     font-style: italic;
     text-align: left;
-    background-color: #eee;
+    background-color: #bde6ed;
 }
 
 .cover {
     float: left;
     width: 100px;
     height: 137px;
-    background-color: #eee;
+    background-color: #bde6ed;
     border: 1px solid black;
     margin-right: 10px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    color: #bde6ed;
+    font-family: 'Tangerine', serif;
+
+    /* sticky footer */
+    position: relative;
+    min-height: 100%;
 }
 
 .textActions {
@@ -249,7 +254,7 @@ Misc
 }
 
 #texts {
-    background-color: #CEFA87;
+    background-color: #e8fbff;
     padding: 5px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -273,7 +278,7 @@ a.text {
     width: 100%;
     margin-bottom: 20px;
     text-align: left;
-    border: 1px solid #eee;
+    border: 1px solid #bde6ed;
 }
 
 a.text:hover {
@@ -291,7 +296,7 @@ a.text .cover {
     float: left;
     width: 100px;
     height: 137px;
-    background-color: #eee;
+    background-color: #bde6ed;
     border: 1px solid black;
     margin-right: 10px;
 }

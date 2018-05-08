@@ -12,7 +12,8 @@
 
     @if($texts != null && count($texts) > 0)
         <aside id='texts'>
-            <h3>Please login to add, edit or delete your existing texts from WikiText!</h3>
+            <h2>Here are existing texts added by other users to WikiText. <h2>
+            <h3>Please login to add, edit or delete your existing texts.</h3>
             <ul>
                 @foreach($texts as $text)
                     <li><a href='/texts/{{ $text->id }}'>{{ $text->header }}</a></li>

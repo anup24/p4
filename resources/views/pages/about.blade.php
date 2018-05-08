@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@push('head')
+    <link href='/css/wikitext.css' rel='stylesheet'>
+@endpush
+
 @section('title')
     About WikiText
 @endsection

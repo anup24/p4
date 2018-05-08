@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <h1>Login to WikiText to add your texts. Your online notepad.</h1>
+    <h2>Login to WikiText to add your texts. Your online notepad.</h2>
 
     Don't have an account? <a href='/register'>Create your account here...</a>
 

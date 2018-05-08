@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-    <h1>Register</h1>
+    <h2>Register to add, edit and delete your texts.</h2>
 
     Already have an account? <a href='/login'>Login here...</a>
 
