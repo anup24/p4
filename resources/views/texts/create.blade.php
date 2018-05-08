@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <h1>Add a new Wiki Text. Your online notepad.</h1>
+    <h2>Add a new Wiki Text. Your online notepad.</h2>
 
     <form method='POST' action='/texts'>
         {{ csrf_field() }}

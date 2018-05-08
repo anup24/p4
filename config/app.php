@@ -14,9 +14,9 @@ return [
 
     # Logged-in user navigation links
     'nav1' => [
-        '/texts' => 'WikiTexts',
-        '/texts/create' => 'Add New WikiText',
-        '/texts/search' => 'Search WikiText',
+        '/texts' => 'All Texts',
+        '/texts/create' => 'Add New Text',
+        '/texts/tags' => 'Tags Cloud',
         '/about' => 'About',
         '/contact' => 'Contact',
     ],

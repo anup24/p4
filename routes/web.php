@@ -22,16 +22,19 @@ Route::group(['middleware' => 'auth'], function () {
     # DELETE
     Route::get('/texts/{id}/delete', 'WikiTextsController@delete');
 
+    # Process the deletion of a text
+    Route::delete('/texts/{id}', 'WikiTextsController@destroy');
+
+    # Search
+    Route::get('/texts/tag/{id}', 'WikiTextsController@tag');
+
+    # Search
+    Route::get('/texts/tags', 'WikiTextsController@tags');
+
 });
 Route::get('/texts', 'WikiTextsController@index');
 
 # Show an individual text
 Route::get('/texts/{id}', 'WikiTextsController@display');
-
-# Process the deletion of a text
-Route::delete('/texts/{id}', 'WikiTextsController@destroy');
-
-# Search
-Route::get('/texts/search', 'WikiTextsController@search');
 
 Auth::routes();

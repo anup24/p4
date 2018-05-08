@@ -16,6 +16,11 @@
         <h2>{{ $text->header }}</h2>
         <label for='Contents'>Contents</label>
         <p>{{ $text->contents }}</p>
+        <label for='tags'>Associated Tags</label>
+        @foreach($tags as $tag)
+            <li><a href='{{ url('texts/tag/'.$tag->id) }}'>{{ $tag->name }}</a></li>
+        @endforeach
+        <br/>
 
         @if($sameUser)
         <ul class='textActions'>

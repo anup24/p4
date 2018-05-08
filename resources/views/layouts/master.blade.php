@@ -4,9 +4,9 @@
     <title>@yield('title', 'WikiTexts')</title>
     <meta charset='utf-8'>
 
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='/css/wikitext.css' type='text/css' rel='stylesheet'>
+    <link href='/css/foobooks.css' type='text/css' rel='stylesheet'>
 
     @stack('head')
 </head>

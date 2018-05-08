@@ -10,12 +10,11 @@
 
 @section('content')
 
-    @if(count($newTexts) > 0)
-        <aside id='newTexts'>
-            <h2>Please login to add, edit or delete your existing texts from WikiText!</h2>
-            <h3>Recently Added Text to Wiki Texts. Your Online Notepad.</h3>
+    @if($texts != null && count($texts) > 0)
+        <aside id='texts'>
+            <h3>Please login to add, edit or delete your existing texts from WikiText!</h3>
             <ul>
-                @foreach($newTexts as $text)
+                @foreach($texts as $text)
                     <li><a href='/texts/{{ $text->id }}'>{{ $text->header }}</a></li>
                 @endforeach
             </ul>

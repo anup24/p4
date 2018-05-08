@@ -10,8 +10,8 @@
 
 @section('content')
 
-    <h1>Edit</h1>
-    <h2>{{ $text->title }}</h2>
+    <h1>Edit Text</h1>
+    <h2>{{ $text->header }}</h2>
 
     <form method='POST' action='/texts/{{ $text->id }}'>
         {{ method_field('put') }}

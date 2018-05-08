@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Config;
-use App\Text;
-use App\User;
-use App\Tag;
 
 class PageController extends Controller
 {

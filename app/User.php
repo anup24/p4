@@ -16,7 +16,7 @@ class User extends Authenticatable
     ];
 
     /*
-    * Define the one to many relationship with authors
+    * Define the one to many relationship with users
     */
     public function texts()
     {
@@ -24,7 +24,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Text');
     }
     /*
-     * Return an array of authors where key = author id and value = authors name
+     * Return an array of users where key = user id and value = users name
      */
     public static function getForDropdown()
     {
@@ -36,7 +36,7 @@ class User extends Authenticatable
         return $usersForDropdown;
     }
     /*
-     * Return authors full name
+     * Return users full name
      */
     public function getFullName($reverse = false) {
         if($reverse) {

@@ -6,8 +6,6 @@ class Text extends Model
 {
     public function user()
     {
-        # WikiText belongs to user
-        # Define an inverse one-to-many relationship.
         return $this->belongsTo('App\User');
     }
     public function tags()
@@ -22,10 +20,10 @@ class Text extends Model
         $data = [];
 
         if (is_null($texts)) {
-            # Query for all the classifieds
+            # Query for all the texts
             $texts = self::all();
         }
-        # Load the data array with the classified info we want
+        # Load the data array with the text info we want
         foreach ($texts as $text) {
             $data[] = $text->header . ' by ' . $text->user;
         }

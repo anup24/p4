@@ -248,20 +248,20 @@ Misc
     padding-right: 20px;
 }
 
-#newTexts {
+#texts {
     background-color: #CEFA87;
     padding: 5px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-#newTexts ul {
+#texts ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-#newTexts h2 {
+#texts h2 {
     margin-top: 0;
 }
 
@@ -295,8 +295,3 @@ a.text .cover {
     border: 1px solid black;
     margin-right: 10px;
 }
-
-
-
-
-

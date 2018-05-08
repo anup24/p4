@@ -2,40 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
+use App\Text;
 use Illuminate\Http\Request;
 use Log;
-use App\Text;
-use App\User;
-use App\Tag;
 
 class WikiTextsController extends Controller
 {
     public function index()
     {
         $texts = Text::orderBy('header')->get();
-        # Query the database to get the last 3 texts added
-        $newTexts = $texts->sortByDesc('created_at')->all();
 
         return view('texts.index')->with([
             'texts' => $texts,
-            'newTexts' => $newTexts,
-            'tagsForCheckboxes' => Tag::getForCheckboxes(),
-            'usersForDropdown' => User::getForDropdown(),
-            'tags' => [],
         ]);
     }
 
     public function display(Request $request, $id)
     {
         $sameUser = false;
-        $text= Text::find($id);
+        $text = Text::find($id);
 
         $user = $request->user();
-        if($user != null && $text != null) {
+        if ($user != null && $text != null) {
             $text_user_id = $text->user_id;
             $curr_user_id = $user->id;
 
-            if($text_user_id == $curr_user_id){
+            if ($text_user_id == $curr_user_id) {
                 $sameUser = true;
             }
         }
@@ -44,8 +37,10 @@ class WikiTextsController extends Controller
                 ['alert' => 'Wiki Text ' . $id . ' not found.']
             );
         }
+
         return view('texts.display')->with([
             'text' => $text,
+            'tags' => $text->tags()->get(),
             'sameUser' => $sameUser,
         ]);
     }
@@ -53,12 +48,12 @@ class WikiTextsController extends Controller
     public function create(Request $request)
     {
         return view('texts.create')->with([
-            'usersForDropdown' => User::getForDropdown(),
             'tagsForCheckboxes' => Tag::getForCheckboxes(),
             'text' => new Text(),
             'tags' => [],
         ]);
     }
+
     /**
      * POST /texts
      */
@@ -73,7 +68,7 @@ class WikiTextsController extends Controller
             'header' => 'required',
             'contents' => 'required',
         ], $messages);
-        # Save the ad to the database
+        # Save the text to the database
         $text = new Text();
         $text->header = $request->header;
         $text->contents = $request->contents;
@@ -82,7 +77,7 @@ class WikiTextsController extends Controller
         $text->tags()->sync($request->input('tags'));
 
         return redirect('/texts')->with([
-            'alert' => 'Your Text ' . $text->header . ' was added.'
+            'alert' => 'Your Text ' . $text->header . ' was added to WikiText.'
         ]);
     }
 
@@ -93,17 +88,18 @@ class WikiTextsController extends Controller
         # Handle the case where we can't find the given text
         if (!$text) {
             return redirect('/texts')->with(
-                ['alert' => 'WikiText ' . $id . ' not found.']
+                ['alert' => 'Text ' . $id . ' not found in WikiText.']
             );
         }
+
         # Show the text edit form
         return view('texts.edit')->with([
-            'usersForDropdown' => User::getForDropdown(),
             'tagsForCheckboxes' => Tag::getForCheckboxes(),
             'tags' => $text->tags()->pluck('tags.id')->toArray(),
             'text' => $text
         ]);
     }
+
     /**
      * PUT /texts/{id}
      */
@@ -126,13 +122,15 @@ class WikiTextsController extends Controller
         $text->tags()->sync($request->input('tags'));
         # Save edits
         $text->save();
+
         # Send the user back to the edit page in case they want to make more edits
         return redirect('/texts/' . $id . '/edit')->with([
             'alert' => 'Your changes were saved'
         ]);
     }
+
     /*
-    * Asks user to confirm they actually want to delete the classified
+    * Asks user to confirm they actually want to delete the text
     * GET /texts/{id}/delete
     */
     public function delete($id)
@@ -141,12 +139,14 @@ class WikiTextsController extends Controller
         if (!$text) {
             return redirect('/texts')->with('alert', 'Text not found');
         }
+
         return view('texts.delete')->with([
             'text' => $text,
         ]);
     }
+
     /*
-    * Actually deletes the classified
+    * Actually deletes the text
     * DELETE /texts/{id}/delete
     */
     public function destroy($id)
@@ -155,40 +155,28 @@ class WikiTextsController extends Controller
         # Before we delete the text we have to delete any tag associations
         $text->tags()->detach();
         $text->delete();
+
         return redirect('/texts')->with([
-            'alert' => '“' . $text->header . '” was removed.'
+            'alert' => '“' . $text->header . '” was removed from WikiText.'
         ]);
     }
 
-    public function search(Request $request)
+    public function tags()
     {
-        $searchResults = [];
-        # Store the searchTerm in a variable for easy access
-        $searchTerm = $request->input('searchTerm', 'My Text 1');
-        # Only try and search *if* there's a searchTerm
-        if ($searchTerm) {
-            # Nothing fancy here; just a built in PHP method
-            $texts = Text::orderBy('header')->get();
+        $tags = Tag::orderBy('id')->get();
 
-            foreach ($texts as $header => $text) {
-                # Case sensitive boolean check for a match
-                if ($request->has('caseSensitive')) {
-                    $match = $header == $searchTerm;
-                    # Case insensitive boolean check for a match
-                } else {
-                    $match = strtolower($header) == strtolower($searchTerm);
-                }
-                # If it was a match, add it to our results
-                if ($match) {
-                    $searchResults[$header] = $text;
-                }
-            }
-        }
-        # Return the view, with the searchTerm *and* searchResults (if any)
-        return view('texts.search')->with([
-            'searchTerm' => $searchTerm,
-            'caseSensitive' => $request->has('caseSensitive'),
-            'searchResults' => $searchResults
+        return view('texts.tag')->with([
+            'tags' => $tags,
+        ]);
+    }
+
+    public function tag($id)
+    {
+        $tag = Tag::find($id);
+        $texts = $tag->texts()->get();
+
+        return view('texts.index')->with([
+            'texts' => $texts,
         ]);
     }
 }
