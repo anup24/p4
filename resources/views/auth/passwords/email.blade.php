@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@push('head')
+    <link href='/css/wikitext.css' type='text/css' rel='stylesheet'>
+@endpush
 
 @section('content')
 <div class="container">

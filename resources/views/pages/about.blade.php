@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    About Foobooks
+    About WikiText
 @endsection
 
 @section('content')

@@ -4,6 +4,10 @@
     Tags
 @endsection
 
+@push('head')
+    <link href='/css/wikitext.css' type='text/css' rel='stylesheet'>
+@endpush
+
 @section('content')
 
     <aside id='texts'>
