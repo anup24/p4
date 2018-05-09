@@ -20,9 +20,9 @@ Primary tables:
 Pivot table(s):
   + `tag_text`
 
-##Demo user
-+Email: dwa15@hes.com
-+Password: dwa15@hes.com
+## Demo user
++ Email: dwa15@hes.com
++ Password: dwa15@hes.com
 
 ## CRUD
 *Registered users can create, view, edit, and delete texts:*
