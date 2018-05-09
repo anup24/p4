@@ -12,12 +12,12 @@
     <form method='POST' action='{{ route('register') }}'>
         {{ csrf_field() }}
 
-        <label for='name'>First Name</label>
+        <label for='first_name'>First Name</label>
         <input id='first_name' type='text' name='first_name' value='{{ old('first_name') }}' required autofocus>
         @include('modules.error-field', ['field' => 'first_name'])
 
-        <label for='name'>Last Name</label>
-        <input id='last_name' type='text' name='last_name' value='{{ old('last_name') }}' required autofocus>
+        <label for='last_name'>Last Name</label>
+        <input id='last_name' type='text' name='last_name' value='{{ old('last_name') }}'>
         @include('modules.error-field', ['field' => 'last_name'])
 
         <label for='email'>E-Mail Address</label>
