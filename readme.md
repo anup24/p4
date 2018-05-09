@@ -5,7 +5,6 @@
 ## Outside resources
 + CSS: [Bootstrap CDN](https://www.bootstrapcdn.com)
 + Icons: [Font Awesome](https://fontawesome.com)
-+ 
 
 ## Code style divergences
 n/a
