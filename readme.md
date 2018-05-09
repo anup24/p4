@@ -3,7 +3,7 @@
 + Production URL: <http://p4.dwa15.site>
 
 ## Outside resources
-+ CSS: [Bootstrap CDN](https://www.bootstrapcdn.com)
++ CSS: [Bootstrap CDN](https://www.bootstrapcdn.com) & [CSS ZEN Garden](http://csszengarden.com)
 + Icons: [Font Awesome](https://fontawesome.com)
 + Social login: [Sitepoint](https://www.sitepoint.com/easily-add-social-logins-to-your-app-with-socialite/) (attempted, not yet working)
 + TLS Certificate from [How To Secure Apache with Let's Encrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04)

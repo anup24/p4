@@ -6,7 +6,7 @@
 
 html {
     font-size: 62.5%;
-    color: #111;
+    color: #7D775C;
     font-family: 'Tangerine', serif;
     /* sticky footer */
     position: relative;
@@ -17,6 +17,10 @@ body {
     margin-bottom: 45px;
     font-size: 16px;
     font-size: 1.6rem;
+    line-height: 1.88889;
+    color: #555753;
+    background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right;
+    padding: 0;
 }
 
 section#main {
@@ -45,6 +49,7 @@ section#main {
 header {
     text-align: center;
     margin-top: 20px;
+    padding-top: 20px;
 }
 
 contents {
@@ -71,8 +76,8 @@ footer {
 Nav bar
 -----------------------------------------------------*/
 nav {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #B7A5DF;
+    border-bottom: 1px solid #B7A5DF;
     padding: 5px;
     margin-top: 10px;
 }
@@ -102,28 +107,32 @@ nav ul li a:hover {
 Typography
 -----------------------------------------------------*/
 a.active:link, a.active:visited, a.active:active, a.active:hover {
-    color: #5b3284;
+    color: #988F5E;
 }
 
 h1 {
     text-align: center;
     font-size: 3.0rem;
-    color: #5b3284;
+    color: #7D775C;
+    font: italic normal 1.4em georgia, sans-serif;
 }
 
 h2 {
     font-size: 2.5rem;
-    color: #5b3284;
+    color: #7D775C;
+    font: italic normal 1.4em georgia, sans-serif;
 }
 
 h3 {
     font-size: 2.0rem;
-    color: #5b3284;
+    color: #7D775C;
+    font: italic normal 1.4em georgia, sans-serif;
 }
 
 h4 {
     font-size: 1.5rem;
-    color: #5b3284;
+    color: #7D775C;
+    font: italic normal 1.4em georgia, sans-serif;
 }
 
 /*----------------------------------------------------
@@ -245,8 +254,6 @@ Misc
     margin-right: 10px;
 }
 
-
-
 .text li {
     display: inline-block;
 }
@@ -280,7 +287,7 @@ a.text {
     width: 100%;
     margin-bottom: 20px;
     text-align: left;
-    border: 1px solid #bde6ed;
+    border: 1px solid #7D775C;
 }
 
 a.text:hover {
