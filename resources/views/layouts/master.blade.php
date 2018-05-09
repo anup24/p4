@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang='en'>
 <head>
-    <title>@yield('title', 'WikiTexts')</title>
+    <title>@yield('title', 'WikiText')</title>
     <meta charset='utf-8'>
 
     <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='/css/foobooks.css' type='text/css' rel='stylesheet'>
+    <link href='/css/wikitext.css' type='text/css' rel='stylesheet'>
 
     @stack('head')
 </head>
@@ -17,7 +17,7 @@
 @endif
 
 <header>
-    <a href='/'><img src='/images/wikitext.png' id='logo' alt='Notepad Logo'> </a>
+    <a href='/'><img src='/images/wikitext.png' id='logo' alt='WikiText Logo'> </a>
     @include('modules.nav')
 </header>
 

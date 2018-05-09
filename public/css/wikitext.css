@@ -1,17 +1,30 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    color: #111;
+    font-family: 'Tangerine', serif;
+    /* sticky footer */
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    /* Default font-size */
+    margin-bottom: 45px;
     font-size: 16px;
     font-size: 1.6rem;
-    font-family: 'Tangerine', serif;
-    margin-bottom: 60px;
 }
 
 section#main {
-    max-width: 650px;
+    max-width: 600px;
     width: 100%;
     margin: auto;
-   /* padding-bottom: 20px; */
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .flashAlert {
@@ -25,6 +38,10 @@ section#main {
     text-align: center;
 }
 
+.cancel {
+    margin-top: 20px;
+}
+
 header {
     text-align: center;
     margin-top: 20px;
@@ -36,13 +53,13 @@ contents {
 }
 
 #logo {
-    width: 550px;
+    width: 600px;
     height: 90px;
 }
 
 footer {
     text-align: center;
-    background-color: #bde6ed;
+    background-color: #eee;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -54,8 +71,8 @@ footer {
 Nav bar
 -----------------------------------------------------*/
 nav {
-    border-top: 1px solid #bde6ed;
-    border-bottom: 1px solid #bde6ed;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     padding: 5px;
     margin-top: 10px;
 }
@@ -85,23 +102,28 @@ nav ul li a:hover {
 Typography
 -----------------------------------------------------*/
 a.active:link, a.active:visited, a.active:active, a.active:hover {
-    color: #18bc9c;
+    color: #5b3284;
 }
 
 h1 {
     text-align: center;
     font-size: 3.0rem;
-    color: #a94442;
+    color: #5b3284;
 }
 
 h2 {
     font-size: 2.5rem;
-    color: #a94442;
+    color: #5b3284;
 }
 
 h3 {
     font-size: 2.0rem;
-    color: #a94442;
+    color: #5b3284;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: #5b3284;
 }
 
 /*----------------------------------------------------
@@ -121,10 +143,11 @@ label, legend {
 
 input[type=text], input[type=email], input[type=password], textarea, select {
     display: block;
-    width: 50%;
+    width: 100%;
     font-size: 1.5rem;
     padding: 3px;
     border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input[type='checkbox'], input[type='radio'] {
@@ -199,12 +222,12 @@ Misc
     text-transform: none;
 }
 
-
 .text {
     padding: 10px;
     width: 100%;
     margin-bottom: 20px;
     text-align: left;
+    list-style-type: none;
 }
 
 .text h2 {
@@ -212,49 +235,28 @@ Misc
     margin: 4px 0 4px 0;
     font-style: italic;
     text-align: left;
-    background-color: #bde6ed;
 }
 
 .cover {
     float: left;
     width: 100px;
     height: 137px;
-    background-color: #bde6ed;
     border: 1px solid black;
     margin-right: 10px;
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-html {
-    font-size: 62.5%;
-    color: #bde6ed;
-    font-family: 'Tangerine', serif;
 
-    /* sticky footer */
-    position: relative;
-    min-height: 100%;
-}
-
-.textActions {
-    list-style-type: none;
-}
-
-.textActions li {
+.text li {
     display: inline-block;
 }
 
-.textActions li a {
+.text li a {
     text-decoration: none;
     padding-right: 20px;
 }
 
 #texts {
-    background-color: #e8fbff;
     padding: 5px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -296,7 +298,13 @@ a.text .cover {
     float: left;
     width: 100px;
     height: 137px;
-    background-color: #bde6ed;
     border: 1px solid black;
     margin-right: 10px;
+}
+
+/* box sizing: http://www.paulirish.com/2012/box-sizing-border-box-ftw */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }

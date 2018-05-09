@@ -21,9 +21,9 @@
             <li><a href='{{ url('texts/tag/'.$tag->id) }}'>{{ $tag->name }}</a></li>
         @endforeach
         <br/>
-
+        <br/>
         @if($sameUser)
-        <ul class='textActions'>
+        <ul class='text'>
             <li><a href='/texts/{{ $text->id }}/edit'><i class="fas fa-pencil-alt"></i> Edit</a>
             <li><a href='/texts/{{ $text->id }}/delete'><i class="fas fa-trash-alt"></i> Delete</a>
         </ul>
