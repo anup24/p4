@@ -29,6 +29,7 @@ Pivot table(s):
 
 __Create__
   + Link accessible to registered users - <http://p4.dwa15.site/texts/create>
+  + Login and Register options are available on the HomePage (Menu) of the application - <https://p4.dwa15.site/>
   + Add details like header, contents of the your text and associated the tags if any.
   + Click *Add Wiki Text*
   + After validation, system will route to the home page of the application or remain on same page with validation errors.
@@ -40,13 +41,13 @@ __Read__
   + View all tags and associated texts added by all users of the application.
   
 __Update__
-  + You can update the text that was added by you. i.e only registered users can access and edit only their own text.
+  + You can update the text that was added by you. i.e only registered users can access this area and edit only their own text.
   + Edit header, contexts and change associate tags if required.
   + Click *Save Changes*
   + After validation, system will keep you on same page to allow more edits if required.
   
 __Delete__
-  + You can delete the text that was added by you. i.e. only registered users can access and delete their own text.
+  + You can delete the text that was added by you. i.e. only registered users can access this area and delete only their own text.
   + Confirm deletion on delete page.
   + Follow the confirmation message to confirm or cancel delete action.
 
