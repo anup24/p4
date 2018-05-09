@@ -29,6 +29,6 @@
         </ul>
         @endif
         <br/>
-        <p><b>Note:</b> Logged in users can view any text however can only edit and delete their own texts.</p>
+        <p><b>Note:</b> Logged in users can view any text but can only edit/delete their own texts.</p>
     </div>
 @endsection

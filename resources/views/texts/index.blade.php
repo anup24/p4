@@ -9,10 +9,9 @@
 @endsection
 
 @section('content')
-
+    <h2>Homepage of existing texts added by other users. </h2>
     @if($texts != null && count($texts) > 0)
         <aside id='texts'>
-            <h2>Homepage of existing texts added by other users. </h2>
             <h4>Please login to add, edit or delete your existing texts or click to view existing texts.</h4>
             <ul>
                 @foreach($texts as $text)
