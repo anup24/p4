@@ -37,4 +37,7 @@ Route::get('/texts', 'WikiTextsController@index');
 # Show an individual text
 Route::get('/texts/{id}', 'WikiTextsController@display');
 
+Route::get('login/{provider}',          'Auth\SocialAccountController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+
 Auth::routes();

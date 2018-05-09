@@ -6,9 +6,12 @@
 
 @section('content')
 
-    <h2>Login to WikiText to add your texts. Your online notepad.</h2>
+    <h2>Login to WikiText to add your texts.</h2>
 
     Don't have an account? <a href='/register'>Create your account here...</a>
+
+    <br/>
+    <a href="/login/github"  class="btn btn-default btn-md">Log in with Github</a>
 
     <form method='POST' action='{{ route('login') }}'>
 
@@ -29,7 +32,7 @@
         <button type='submit' class='btn btn-primary'>Login</button>
 
         <a class='btn btn-link' href='{{ route('password.request') }}'>Forgot Your Password?</a>
-
     </form>
+
 
 @endsection

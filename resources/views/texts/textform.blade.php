@@ -8,7 +8,7 @@
 <textarea id="contents" name = "contents" rows="10" >{{ old('contents', $text->contents) }}</textarea>
 @include('modules.error-field', ['field' => 'contents'])
 
-<label>Tags</label>
+<label>Associate tags with your text</label>
 @foreach($tagsForCheckboxes as $tagId => $tagName)
 <ul class='tags'>
         <label>
