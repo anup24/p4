@@ -3,8 +3,6 @@ Route::get('/', 'WikiTextsController@index');
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 
-# CREATE
-# Show the form to add a new text
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/texts/create', 'WikiTextsController@create');
@@ -37,7 +35,8 @@ Route::get('/texts', 'WikiTextsController@index');
 # Show an individual text
 Route::get('/texts/{id}', 'WikiTextsController@display');
 
-Route::get('login/{provider}',          'Auth\SocialAccountController@redirectToProvider');
+Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
+
 Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 
 Auth::routes();
