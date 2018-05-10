@@ -2,13 +2,6 @@
 + By: *Anup Shetye*
 + Production URL: <http://p4.dwa15.site>
 
-## Outside resources
-+ Inspired by [Pastebin](https://pastebin.com/)
-+ CSS and background image: [Bootstrap CDN](https://www.bootstrapcdn.com) & [CSS ZEN Garden](http://csszengarden.com)
-+ Icons: [Font Awesome](https://fontawesome.com)
-+ Social login: [Sitepoint](https://www.sitepoint.com/easily-add-social-logins-to-your-app-with-socialite/) (attempted, not yet working)
-+ TLS Certificate from [How To Secure Apache with Let's Encrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04)
-
 ## Database
 *Registered users data is stored in 'users' table and the texts added by them are in 'texts' table whereas associated tags are stored in the 'tags' table with many-to-many relationship*
 
@@ -19,10 +12,6 @@ Primary tables:
   
 Pivot table(s):
   + `tag_text`
-
-## Demo user
-+ Email: dwa15@hes.com
-+ Password: dwa15@hes.com
 
 ## CRUD
 *Registered users can create, view, edit, and delete texts:*
@@ -50,6 +39,17 @@ __Delete__
   + You can delete the text that was added by you. i.e. only registered users can access this area and delete only their own text.
   + Confirm deletion on delete page.
   + Follow the confirmation message to confirm or cancel delete action.
+
+## Outside resources
++ Inspired by [Pastebin](https://pastebin.com/)
++ CSS and background image: [Bootstrap CDN](https://www.bootstrapcdn.com) & [CSS ZEN Garden](http://csszengarden.com)
++ Icons: [Font Awesome](https://fontawesome.com)
++ Social login: [Sitepoint](https://www.sitepoint.com/easily-add-social-logins-to-your-app-with-socialite/) (attempted, not yet working)
++ TLS Certificate from [How To Secure Apache with Let's Encrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04)
+
+## Demo user
++ Email: dwa15@hes.com
++ Password: dwa15@hes.com
 
 ## Code style divergences
 n/a
