@@ -9,7 +9,6 @@
 + Social login: [Sitepoint](https://www.sitepoint.com/easily-add-social-logins-to-your-app-with-socialite/) (attempted, not yet working)
 + TLS Certificate from [How To Secure Apache with Let's Encrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04)
 
-
 ## Database
 *Registered users data is stored in 'users' table and the texts added by them are in 'texts' table whereas associated tags are stored in the 'tags' table with many-to-many relationship*
 
