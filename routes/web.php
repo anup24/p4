@@ -3,6 +3,7 @@ Route::get('/', 'WikiTextsController@index');
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 
+# Show the form to add a new text
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/texts/create', 'WikiTextsController@create');
@@ -25,18 +26,17 @@ Route::group(['middleware' => 'auth'], function () {
 
     # Search
     Route::get('/texts/tag/{id}', 'WikiTextsController@tag');
+
+    # Search
+    Route::get('/texts/tags', 'WikiTextsController@tags');
+
 });
-
-# Search
-Route::get('/texts/tags', 'WikiTextsController@tags');
-
 Route::get('/texts', 'WikiTextsController@index');
 
 # Show an individual text
 Route::get('/texts/{id}', 'WikiTextsController@display');
 
 Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
-
 Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 
 Auth::routes();
