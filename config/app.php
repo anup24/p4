@@ -6,6 +6,7 @@ return [
     # Guest navigation links
     'nav' => [
         '/texts' => 'WikiTexts',
+        '/texts/tags' => 'Tags Cloud',
         '/register' => 'Register',
         '/login' => 'Login',
         '/about' => 'About',

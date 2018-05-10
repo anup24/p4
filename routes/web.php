@@ -27,11 +27,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     # Search
     Route::get('/texts/tag/{id}', 'WikiTextsController@tag');
-
-    # Search
-    Route::get('/texts/tags', 'WikiTextsController@tags');
-
 });
+
+# Search
+Route::get('/texts/tags', 'WikiTextsController@tags');
+
 Route::get('/texts', 'WikiTextsController@index');
 
 # Show an individual text

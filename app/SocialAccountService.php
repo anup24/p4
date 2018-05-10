@@ -31,7 +31,6 @@ class SocialAccountService
             ]);
 
             return $user;
-
         }
     }
 }
