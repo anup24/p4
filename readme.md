@@ -3,7 +3,7 @@
 + Production URL: <http://p4.dwa15.site>
 
 ## Outside resources
-+ Inspired by [Pastebin] (https://pastebin.com/)
++ Inspired by [Pastebin](https://pastebin.com/)
 + CSS and background image: [Bootstrap CDN](https://www.bootstrapcdn.com) & [CSS ZEN Garden](http://csszengarden.com)
 + Icons: [Font Awesome](https://fontawesome.com)
 + Social login: [Sitepoint](https://www.sitepoint.com/easily-add-social-logins-to-your-app-with-socialite/) (attempted, not yet working)
